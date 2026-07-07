@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Claude Code dark theme — terracotta accent, flat surfaces, warm neutrals */
+:root {
+  --bg-primary: #191817;
+  --bg-secondary: #242220;
+  --bg-elevated: #2d2b28;
+  --bg-input: #1e1d1b;
+  --text-primary: #f5f3ee;
+  --text-secondary: #a8a29e;
+  --text-muted: #6b6560;
+  --text-inactive: #5a554e;
+  --accent: #d77757;
+  --accent-hover: #c96442;
+  --accent-soft: rgba(215, 119, 87, 0.12);
+  --border: #3d3a36;
+  --border-subtle: #2e2c28;
+  --success: #4eba65;
+  --error: #ff6b80;
+  --warning: #e8b84a;
+  --selection: rgba(215, 119, 87, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+::selection {
+  background: var(--selection);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Claude-style focus ring */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
